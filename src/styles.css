@@ -9,7 +9,7 @@ div .container{
     flex: 1 1 auto;
 }
 
-form .normal-form{
+form.normal-form{
     margin: 10px;;
 }
 
@@ -17,3 +17,16 @@ form .normal-form{
     width: 100%;
     padding: 5%;
 }
+
+.controlers-container > *{
+    width: 100%;
+}
+
+.add-bottom-padding{
+   padding-bottom: 10px; 
+}
+
+mat-radio-group mat-radio-button{
+    margin-left: 5px;
+}
+
