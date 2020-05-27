@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from 'src/app/shared/employee.service';
 import {DepartmentService} from '../../shared/department.service';
+import {NotificationService} from '../../shared/notification.service';
 
 @Component({
   selector: 'app-employee',
@@ -10,7 +11,7 @@ import {DepartmentService} from '../../shared/department.service';
 export class EmployeeComponent implements OnInit {
 
   constructor(public service: EmployeeService, 
-    public departmentService: DepartmentService ) { }
+    public departmentService: DepartmentService, public notificationService: NotificationService ) { }
 
   
   
@@ -20,7 +21,8 @@ export class EmployeeComponent implements OnInit {
 
   onClear(){
    this.service.form.reset();
-   this.service.initializeFormGroup(); 
+   this.service.initializeFormGroup();    
+   this.notificationService.success(':: Submitted Successfully');
   }
 
   onSubmit() {
