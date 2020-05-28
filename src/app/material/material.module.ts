@@ -13,6 +13,8 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
 
 @NgModule({
   declarations: [],
@@ -30,7 +32,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatNativeDateModule,
     MatButtonModule,
     MatSnackBarModule,
-    MatIconModule
+    MatIconModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   exports:[
     MatToolbarModule,
@@ -45,7 +49,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     MatSnackBarModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
+    MatPaginatorModule,
+    MatSortModule
   ]
 })
 export class MaterialModule { }
