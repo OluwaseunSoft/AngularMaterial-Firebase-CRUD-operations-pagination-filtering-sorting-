@@ -27,9 +27,11 @@ export class DepartmentService {
    getDepartmentName($key)
    {
      if($key == "0")
+     {
       return "";
+     }     
     else{
       return _.find(this.array, (obj) => {return obj.$key == $key; })['name'];
     }
-   }
+  }
 }
