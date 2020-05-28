@@ -40,7 +40,7 @@ searchKey: string;
   }
 
   onSearchClear(){
-    this.searchKey = "";
+    this.searchKey = " ";
     this.applyFilter();
   }
 
