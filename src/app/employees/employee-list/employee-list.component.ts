@@ -3,6 +3,7 @@ import { EmployeeService } from 'src/app/shared/employee.service';
 import {MatTableDataSource} from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
+import { DepartmentService } from 'src/app/shared/department.service';
 
 
 @Component({
@@ -12,10 +13,10 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class EmployeeListComponent implements OnInit {
 
-  constructor(private service: EmployeeService) { }
+  constructor(private service: EmployeeService, private departmentService: DepartmentService) { }
 
   listData: MatTableDataSource<any>;
-  displayedColumns: string[] = ['fullName', 'email', 'mobile', 'city', 'actions'];
+  displayedColumns: string[] = ['fullName', 'email', 'mobile', 'city', 'departmentName', 'actions'];
 @ViewChild(MatSort) sort: MatSort;
 @ViewChild(MatPaginator) paginator: MatPaginator;
 searchKey: string;
@@ -24,8 +25,10 @@ searchKey: string;
     this.service.getEmployees().subscribe(
       list => {
         let array = list.map(item => {
+          let departmentName = this.departmentService.getDepartmentName(item.payload.val()['department']);
           return {
             $key: item.key,
+            departmentName,
             ...item.payload.val()
           };         
         });
