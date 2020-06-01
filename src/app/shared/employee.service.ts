@@ -63,13 +63,13 @@ export class EmployeeService {
   updateEmployee(employee){
     this.employeeList.update(employee.$key,
       {
-        fullName: employee.fullName,
+      fullName: employee.fullName,
       email: employee.email,
       mobile: employee.mobile,
       city: employee.city,
       gender: employee.gender,
       department: employee.department,
-      hireDate: employee.hireDate,
+      hireDate: this.datePipe.transform(employee.hireDate),
       isPermanent: employee.isPermanent
       });
   }
