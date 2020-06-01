@@ -31,7 +31,7 @@ export class DepartmentService {
       return "";
      }     
     else{
-      return _.find(this.array, (obj) => {return obj.$key == $key; })['name'];
+      return _.find(this.array, (obj) => {return obj.$key == $key; });
     }
   }
 }
