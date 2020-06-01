@@ -4,6 +4,9 @@ import {MatTableDataSource} from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { DepartmentService } from 'src/app/shared/department.service';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { EmployeeComponent } from '../employee/employee.component';
+
 
 
 @Component({
@@ -13,7 +16,9 @@ import { DepartmentService } from 'src/app/shared/department.service';
 })
 export class EmployeeListComponent implements OnInit {
 
-  constructor(private service: EmployeeService, private departmentService: DepartmentService) { }
+  constructor(private service: EmployeeService, 
+    private departmentService: DepartmentService,
+    private dialog: MatDialog) { }
 
   listData: MatTableDataSource<any>;
   displayedColumns: string[] = ['fullName', 'email', 'mobile', 'city', 'departmentName', 'actions'];
@@ -51,6 +56,11 @@ searchKey: string;
 
   applyFilter(){
     this.listData.filter = this.searchKey.trim().toLowerCase();
+  }
+
+  onCreate()
+  {
+      this.dialog.open(EmployeeComponent);
   }
 
 }
