@@ -60,7 +60,12 @@ searchKey: string;
 
   onCreate()
   {
-      this.dialog.open(EmployeeComponent);
+    this.service.initializeFormGroup();
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.disableClose = true;
+      dialogConfig.autoFocus = true;
+      dialogConfig.width = "60%";
+      this.dialog.open(EmployeeComponent, dialogConfig);
   }
 
 }
