@@ -11,7 +11,7 @@ export class EmployeeService {
 
   constructor(private firebase: AngularFireDatabase) { }
 
-  datePipe: DatePipe;
+  protected datePipe: DatePipe = new DatePipe('en-US');
   employeeList: AngularFireList<any>;
 
   form: FormGroup = new FormGroup({
