@@ -84,10 +84,12 @@ searchKey: string;
 
   onDelete($key)
   {
-    if(confirm('Are you sure to delete this record? '))
-    {
-        this.service.deleteEmployee($key);
-        this.notificationService.warn('! deleted');
-    }
+    // if(confirm('Are you sure to delete this record? '))
+    // {
+    //     this.service.deleteEmployee($key);
+    //     this.notificationService.warn('! deleted');
+    // }
+
+    this.dialogService.openConfirmDialog();
   }
 }

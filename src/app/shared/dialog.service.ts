@@ -14,6 +14,7 @@ export class DialogService {
   {
     this.dialog.open(MatConfirmDialogComponent, {
       width: '390px',
+      panelClass: 'confirm-dialog-container',
       disableClose: true
     });
   }
