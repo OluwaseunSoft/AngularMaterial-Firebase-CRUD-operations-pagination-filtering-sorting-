@@ -6,6 +6,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { DepartmentService } from 'src/app/shared/department.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { EmployeeComponent } from '../employee/employee.component';
+import { NotificationService } from 'src/app/shared/notification.service';
 
 
 
@@ -18,7 +19,8 @@ export class EmployeeListComponent implements OnInit {
 
   constructor(private service: EmployeeService, 
     private departmentService: DepartmentService,
-    private dialog: MatDialog) { }
+    private dialog: MatDialog,
+    private notificationService: NotificationService) { }
 
   listData: MatTableDataSource<any>;
   displayedColumns: string[] = ['fullName', 'email', 'mobile', 'city', 'departmentName', 'actions'];
@@ -76,5 +78,14 @@ searchKey: string;
       dialogConfig.autoFocus = true;
       dialogConfig.width = "60%";
       this.dialog.open(EmployeeComponent, dialogConfig);
+  }
+
+  onDelete($key)
+  {
+    if(confirm('Are you sure to delete this record? '))
+    {
+        this.service.deleteEmployee($key);
+        this.notificationService.warn('! deleted');
+    }
   }
 }
