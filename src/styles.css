@@ -112,6 +112,18 @@ mat-footer-row mat-footer-cell{
     font-weight: bolder;
 }
 
+.confirm-dialog-container #close-icon:hover{
+    cursor: pointer;
+}
+
+.confirm-dialog-container #no-button{
+    height: 50px;
+    width: 50%;
+    background-color: #fc7169;
+    columns: white;
+    border-radius: 0px;
+}
+
 .confirm-dialog-container #yes-button{
     height: 50px;
     width: 50%;
