@@ -1,7 +1,7 @@
 <div>
     <div class="content-container">
-        <mat-icon id="close-icon">close</mat-icon>
-        <span class="content-span full-width">Are you sure to delete this record ? </span>
+        <mat-icon id="close-icon" (click)="closeDialog()">close</mat-icon>
+        <span class="content-span full-width">{{data.message}}</span>
     </div>
     <button mat-mat-flat-button id="no-button">NO</button>
     <button mat-mat-flat-button id="yes-button">YES</button>
