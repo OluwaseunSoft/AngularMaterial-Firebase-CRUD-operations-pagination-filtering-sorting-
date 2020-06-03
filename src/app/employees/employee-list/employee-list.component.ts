@@ -90,6 +90,6 @@ searchKey: string;
     //     this.notificationService.warn('! deleted');
     // }
 
-    this.dialogService.openConfirmDialog();
+    this.dialogService.openConfirmDialog('Are you sure to delete this record ? ');
   }
 }
