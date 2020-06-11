@@ -41,7 +41,7 @@ export class EmployeeComponent implements OnInit {
         this.service.updateEmployee(this.service.form.value);
         this.service.form.reset();
         this.service.initializeFormGroup();          
-        this.notificationService.success(':: Modified Successfully');
+        this.notificationService.success(':: Modified Successfully, Employee record!');
         this.onClose();
       }
      
