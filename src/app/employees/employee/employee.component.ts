@@ -34,7 +34,7 @@ export class EmployeeComponent implements OnInit {
       if(!this.service.form.get('$key').value)
       {
         this.service.insertEmployee(this.service.form.value);
-        this.notificationService.success(':: New Record Submitted Successfully');
+        this.notificationService.success(':: New Record Submitted Successfully, yeah!');
         this.onClose();
       }
       else{
