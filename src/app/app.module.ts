@@ -12,6 +12,7 @@ import { EmployeeService } from './shared/employee.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import {environment} from '../environments/environment';
 import {DepartmentService} from './shared/department.service';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
@@ -33,6 +34,7 @@ import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dial
     ReactiveFormsModule,
     BrowserAnimationsModule,
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FormsModule
   ],
