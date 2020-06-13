@@ -18,6 +18,7 @@ import {DepartmentService} from './shared/department.service';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 import { DatePipe } from '@angular/common';
 import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dialog.component';
+import { LoginComponent } from './admin/login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dial
     EmployeesComponent,
     EmployeeComponent,
     EmployeeListComponent,
-    MatConfirmDialogComponent
+    MatConfirmDialogComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
