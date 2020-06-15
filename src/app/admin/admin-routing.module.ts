@@ -3,13 +3,12 @@ import {LoginComponent} from './login/login.component';
 import { RegisterComponent } from  './register/register.component';
 import { ForgotPasswordComponent } from  './forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from  './verify-email/verify-email.component';
-import { Routes } from '@angular/router';
-import { EmployeeListComponent } from '../employees/employee-list/employee-list.component';
+import { Routes, RouterModule } from '@angular/router';
+
 
 const routes: Routes = [
     {
         path: 'admin',
-        component: EmployeeListComponent,
 
         children: [
             {path: 'login', component: LoginComponent},
@@ -20,3 +19,5 @@ const routes: Routes = [
 
     }
 ];
+
+export const SappRoutingModule = RouterModule.forChild(routes);
