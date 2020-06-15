@@ -19,6 +19,9 @@ import { EmployeeListComponent } from './employees/employee-list/employee-list.c
 import { DatePipe } from '@angular/common';
 import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dialog.component';
 import { LoginComponent } from './admin/login/login.component';
+import { RegisterComponent } from './admin/register/register.component';
+import { ForgotPasswordComponent } from './admin/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './admin/verify-email/verify-email.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { LoginComponent } from './admin/login/login.component';
     EmployeeComponent,
     EmployeeListComponent,
     MatConfirmDialogComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent
   ],
   imports: [
     BrowserModule,
