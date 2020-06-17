@@ -9,7 +9,35 @@ import {User} from 'firebase';
 })
 export class AuthService {
 
-  constructor() { }
+  constructor(public afAuth: AngularFireAuth, public router: Router) {
+    this.afAuth.authState.subscribe(user => {
+      if(user){
+        this.user = user;
+        localStorage.setItem('user', JSON.stringify(this.user));        
+      }
+      else{
+        localStorage.setItem('user', null);
+      }
+    })
+   }
 
   user: User;
+
+  async login(email: string, password: string)
+  {
+    var result = await this.afAuth.auth.signInWithEmailAndPassword(email, password)
+    this.router.navigate(['admin/list']);
+  }
+
+  async register(email: string, password: string)
+  {
+    var result = await this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+    this.sendEmailVerification();
+  }
+
+  async sendEmailVerification()
+  {
+    await this.afAuth.auth.currentUser.sendEmailVerification()
+    this.router.navigate(['admin/verify-email']);
+  }
 }
