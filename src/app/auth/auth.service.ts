@@ -40,4 +40,24 @@ export class AuthService {
     await this.afAuth.auth.currentUser.sendEmailVerification()
     this.router.navigate(['admin/verify-email']);
   }
+
+  async sendPasswordResetEmail(passwordResetEmail: string) {
+    return await this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail);
+ }
+
+ async logout(){
+  await this.afAuth.auth.signOut();
+  localStorage.removeItem('user');
+  this.router.navigate(['admin/login']);
+}
+
+get isLoggedIn(): boolean {
+  const  user  =  JSON.parse(localStorage.getItem('user'));
+  return  user  !==  null;
+}
+
+async  loginWithGoogle(){
+  await  this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider())
+  this.router.navigate(['admin/list']);
+}
 }
