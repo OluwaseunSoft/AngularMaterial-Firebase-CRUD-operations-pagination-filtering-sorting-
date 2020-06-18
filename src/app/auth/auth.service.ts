@@ -45,11 +45,12 @@ export class AuthService {
     return await this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail);
  }
 
- async logout(){
-  await this.afAuth.auth.signOut();
-  localStorage.removeItem('user');
-  this.router.navigate(['admin/login']);
-}
+//  async logout(){
+//   await this.afAuth.auth.signOut();
+//   localStorage.removeItem('user');
+//   this.router.navigate(['admin/login']);
+// }
+//logout method
 
 get isLoggedIn(): boolean {
   const  user  =  JSON.parse(localStorage.getItem('user'));
