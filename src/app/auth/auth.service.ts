@@ -3,6 +3,7 @@ import {Router} from "@angular/router";
 import {auth} from 'firebase/app';
 import {AngularFireAuth} from "@angular/fire/auth";
 import {User} from 'firebase';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -56,6 +57,15 @@ get isLoggedIn(): boolean {
   const  user  =  JSON.parse(localStorage.getItem('user'));
   return  user  !==  null;
 }
+
+public isAuthenticated = new BehaviorSubject<boolean>(false);
+  
+
+// async checkAuthenticated() {
+//       const authenticated = await this.authClient.session.exists();
+//       this.isAuthenticated.next(authenticated);
+//       return authenticated;
+//     }
 
 async  loginWithGoogle(){
   await  this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider())
